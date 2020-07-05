@@ -1,0 +1,27 @@
+---
+title: "README"
+author: "Juan Sebastian Sánchez Velandia"
+date: "4/7/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Readme
+This is the readme for the final assignment of the coursera course  'Getting and Cleaning Data' made in r and is about the experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+# Codebook
+CodeBook.md  is a file that describes the variables, the data, and any changes or work that I made to clean up the data
+
+# r Script
+run_analysis.R is the script that makes the new clean dataset following the review criteria of the assignment:
+* The submitted data set is tidy.
+* The Github repo contains the required scripts.
+* GitHub contains a code book that modifies and updates the available codebooks with the data to indicate all the variables and summaries calculated, along with units, and any other relevant information.
+* The README that explains the analysis files is clear and understandable.
+* The work submitted for this project is the work of the student who submitted it.
+
+# NewDataset.txt
+NewDataset.txt is the final file made after running the script described above.

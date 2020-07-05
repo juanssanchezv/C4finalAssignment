@@ -1,0 +1,50 @@
+---
+title: "Code Book"
+author: "Juan Sebastian Sánchez Velandia"
+date: "3/7/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Code Book
+
+This is a Code Book document. It indicates all the variables and summaries calculated, along with units, and any other relevant information.
+
+## Set the work directory, download the dataset and unzip it
+
+First I set the directory so the dataset is download in the right place, then the file is unzipped
+
+## Read the files and make them variables
+The txt's files from the unzipped file are:
+* features is a table with all the names of the variables of the dataset, the size is 561x2
+* activity_labels is a table with all the activities performed by the people, the size is 6x2
+* subject_test is a table  of the data for the 30% of the people, the size is 2947x1
+* x_test is a table of the features data for the 30% of the people, the size is 2947x561
+* y_test is a table of the activities labels data for the 30% of the people, the size is 2947x1
+* subject_train is a table  of the data for the 70% of the people, the size is 7352x1
+* x_train is a table of the features data for the 70% of the people, the size is 7352x561
+* y_train is a table of the activities labels data for the 70% of the people, the size is 7352x1
+
+## Join the data
+
+The data was join i the following way:
+* subject_test and subject_train where joined with the "rbind" function
+* x_test and x_train where joined with the "rbind" function
+* y_test and y_train where joined with the "rbind" function
+* The three data tables from above where joined with the "cbind" function
+
+## Clean the data
+The joined dataset was cleaned by creating a new dataset and selecting the following columns:
+* subject column which comes from joining the subject_test and subject_train tables
+* num column which comes from joining the y_test and y_train tables
+* all the columns which have 'mean' and 'std' in their label which comes from joining the x_test and x_train tables
+Then the column label 'subject' was changed to 'Person' for better understanding
+Then the column 'num' was changed to 'Activity' for better understanding
+Finally the abreviations of words were replaced with the full words instead for example:
+* "Acc" to "Accelerometer", "gravity" to "Gravity", "Gyro" to "Gyroscope", "BodyBody" to "Body", "Mag" to "Magnitude", "^t" to "Time ", "^f" to "Frequency ", "angle" to "Angle "
+
+## Create a new file with the clean data and summarized it
+Finally the data is grouped by Person and Activity, then the mean of all the other variables is calculated and at last the new dataset which is a table of size 180x88 is saved in a txt file
